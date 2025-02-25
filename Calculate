@@ -1,0 +1,40 @@
+package Calculate;
+
+public class Calculate {
+	private int altura;
+	private int largura;
+	private int Area;
+	private static int Perimetro;
+	private static int Diagonal;
+	
+	
+	public Calculate(int altura, int largura) {
+		this.altura = altura;
+		this.largura = largura;
+	}
+	
+	void calculateArea(int altura2, int largura) {
+		Area = altura2 * largura;
+	}
+
+	static void calculatePerimetro(int altura, int largura) {
+		Perimetro = (altura * 2) + (largura * 2);
+	}
+	
+	static void calculateDiagonal(int altura, int largura) {
+		Diagonal = (int) Math.sqrt(Math.pow(altura, 2) + Math.pow(largura, 2));
+	}
+	
+	public int getArea() {
+		return Area;
+	}
+	
+	public int getPerimetro() {
+		return Perimetro;
+	}
+	
+	public int getDiagonal() {
+		return Diagonal;
+	}
+	
+}
