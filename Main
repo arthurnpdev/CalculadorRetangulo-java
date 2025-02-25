@@ -1,0 +1,34 @@
+package Calculate;
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Informe a altura do retângulo: ");
+		int altura = scanner.nextInt();
+		
+		System.out.println("Informe a largura do retângulo: ");
+		int largura = scanner.nextInt();
+		
+		Calculate calculate = new Calculate(altura, largura);
+		
+		while(true) {
+		System.out.println("O que deseja calcular? ( A - Área / P - Perímetro / D - Diagonal )");
+		Scanner scanner2 = new Scanner(System.in);
+		String op = scanner2.nextLine();
+		if(op.equalsIgnoreCase("A")) {
+			calculate.calculateArea(altura, largura);
+			System.out.println("Área: " + calculate.getArea());
+		} else if(op.equalsIgnoreCase("P")) {
+			calculate.calculatePerimetro(altura, largura);
+			System.out.println("Perímetro: " + calculate.getPerimetro());
+		}else if(op.equalsIgnoreCase("D")) {
+			calculate.calculateDiagonal(altura, largura);
+			System.out.println("Diagonal: " + calculate.getDiagonal());
+		}else {
+			System.out.println("Comando inválido!");
+		}
+		}
+	}
+
+}
